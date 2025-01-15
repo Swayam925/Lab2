@@ -1,11 +1,53 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<module type="JAVA_MODULE" version="4">
-  <component name="NewModuleRootManager" inherit-compiler-output="true">
-    <exclude-output />
-    <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
-    </content>
-    <orderEntry type="inheritedJdk" />
-    <orderEntry type="sourceFolder" forTests="false" />
-  </component>
-</module>
+public class Lab2 {
+    public static void main(String[] args) {
+        System.out.println("Main");
+
+        // Creating a student object using default constructor
+        Student student = new Student();
+        student.dob = "09-07-2005";  // Assigning value directly
+        student.gender = "M";         // Assigning value directly
+        System.out.println(student.dob);
+        student.course();
+        student.registration();
+
+        // Creating student objects using parameterized constructor
+        Student student1 = new Student(76.5f, 65, "987656788", "6-7-2005", "m");
+        Student student2 = new Student(82.3f, 15, "12345", "09-98-25", "f");
+        Student student3 = new Student(23.2f, 25, "45324232", "23-04-23", "f");
+        Student student4 = new Student(34.2f, 35, "2342342323", "6-2-23", "m");
+        Student student5 = new Student(342.5f, 45, "67554435", "13-01-2005", "m");
+    }
+}
+
+class Student {
+    // Fields
+    String gender;
+    String dob;
+    String phone;
+    int roll;
+    float weight;
+
+    // Default constructor
+    public Student() {
+        System.out.println("No students found");
+    }
+
+    // Parameterized constructor
+    public Student(float weight, int roll, String phone, String dob, String gender) {
+        this.weight = weight;
+        this.roll = roll;
+        this.phone = phone;
+        this.dob = dob;
+        this.gender = gender;
+    }
+
+    // Method to simulate course completion
+    void course() {
+        System.out.println("Completed");
+    }
+
+    // Method to simulate registration status
+    void registration() {
+        System.out.println("Incomplete");
+    }
+}
